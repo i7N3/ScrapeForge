@@ -1,0 +1,8 @@
+Flask~=2.0.3
+pyppeteer~=1.0.2
+gunicorn~=20.1.0
+2captcha-python~=1.1.2
+asgiref~=3.5.0
+celery==5.2.2
+redis~=4.1.4
+pyppeteer-stealth~=2.7.3
