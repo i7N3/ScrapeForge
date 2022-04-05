@@ -20,7 +20,7 @@ That is Python web service template built on Flask framework, using celery job q
 -   `pyppeteer-stealth`: pyppeteer plugin to prevent detection
 -   `pyppeteer`: JavaScript (headless) chrome/chromium browser automation library
 
-### Few words application logic
+### Few words about application logic
 
 -   Root `/` EP can help with proxies validation
 -   To work with API you need to generate random key and put it into code. When you call EPs put that key into HTTP-header `x-auth-token`
