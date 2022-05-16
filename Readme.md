@@ -27,7 +27,7 @@ That is Python web service template built on Flask framework, using celery job q
 -   To start the job call `/slots/<idx>` EP with account index
 -   After sometime call `/status/<task_id>` EP to get the results of job
 
-### How to start run app?
+### How to run the app?
 
 -   To start web service run: `gunicorn wsgi:app`
 -   To start celery worker run: `celery -A main.celery worker`
