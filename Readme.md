@@ -1,33 +1,37 @@
-# python-web-scraper-template
+# web-scraper-poc 🌐
 
-That is Python web service template built on Flask framework, using celery job queue to solve tasks asynchronously.
+## Overview 🌟
 
-### This particular template is used for
+Web scraper Python web service proof of concept (POC): template/starter/example built on the Flask framework and integrating a Celery job queue, offers solution for web scraping tasks. It's designed to perform authorization on websites, simulate human-like behavior, and handle asynchronous tasks effectively.
 
--   Authorization on any site
--   Simulation human like behavior
--   Additionally the program might use proxies
--   Asynchronous captcha solution using the 2captcha service and celery
--   Headless browser emulation with pyppeteer to communicate with website
+## Key Features 🛠️
 
-### Few words about dependencies
+-   **Proxy Support:** Configurable for proxy usage.
+-   **Asynchronous Operations:** Uses Celery for task management.
+-   **User Simulation:** Mimics human behavior for more effective scraping.
+-   **Browser Emulation:** Utilizes pyppeteer for headless browser interactions.
+-   **Captcha Solving:** Integrates 2captcha service for automated captcha resolution.
 
--   `gunicorn`: Web Server
--   `celery`: Aasynchronous task queue
--   `2captcha-python`: SDK of 2captcha.com
--   `Flask`: Micro web framework to build APIs
--   `redis`: In-memory data store (used with celery)
--   `pyppeteer-stealth`: pyppeteer plugin to prevent detection
--   `pyppeteer`: JavaScript (headless) chrome/chromium browser automation library
+## Dependencies 📝
 
-### Few words about application logic
+-   `flask`: Core web framework.
+-   `gunicorn`: Preferred web server.
+-   `redis`: In-memory data store, used with Celery.
+-   `celery`: For managing asynchronous task queues.
+-   `2captcha-python`: SDK for captcha solving service.
+-   `pyppeteer` & `pyppeteer-stealth`: For browser automation and stealth operation.
 
--   Root `/` EP can help with proxies validation
--   To work with API you need to generate random key and put it into code. When you call EPs put that key into HTTP-header `x-auth-token`
--   To start the job call `/slots/<idx>` EP with account index
--   After sometime call `/status/<task_id>` EP to get the results of job
+## Application Logic 🔧
 
-### How to run the app?
+-   **Proxy Validation:** Root endpoint `/` checks proxy health.
+-   **Authentication:** Generate a random key for API access, used in the `x-auth-token` HTTP header.
+-   **Task Management:** Start scraping tasks via `/slots/<idx>` and check status with `/status/<task_id>`.
 
--   To start web service run: `gunicorn wsgi:app`
--   To start celery worker run: `celery -A main.celery worker`
+## Quick Start Guide 🚀
+
+-   **Start the Web Service:** Run `gunicorn wsgi:app`.
+-   **Start the Celery Worker:** Execute `celery -A main.celery worker`.
+
+## Contributing 💡
+
+Contributions to enhance the template, add new features, or improve documentation are highly appreciated. Feel free to fork the project and submit your pull requests!
